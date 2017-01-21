@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>confirm</title>
+    <script type="text/javascript">
+        function testIf() {
+            var mymessage = true;
+            if (mymessage == true) {
+                document.write("我就是这么屌!");
+            }
+            else {
+                document.write("我还是这么屌");
+            }
+        }
+
+        //可输入信息的对话框
+        function testPrompt() {
+            var bra = prompt("请问你的罩杯是多少", "E");
+            if (bra == "E") {
+                document.write("OH,come on baby");
+            } else if (bra == "D") {
+                document.write("my darling");
+            } else {
+                document.write("i donnot like you");
+            }
+        }
+
+        //打开新的网页窗口
+        var mywindow;
+        function openNewWindow() {
+            mywindow = window.open('http://www.imooc.com', '_blank', 'width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes')
+        }
+
+        function closeWindow() {
+            mywindow.close()
+
+        }
+
+        function openConfirmWindow() {
+
+            if (confirm("确定打开新窗口吗？")) {
+
+                var url = prompt("请输入一个网址", "http://www.imooc.com/");
+
+                window.open(url, "_blank", "toolbar=no, menubar=no, scrollbars=yes,  width=400, height=400");
+
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<p id="con">Hello World</p>
+<script>
+    function changeInnerHtml() {
+        var mycon = document.getElementById("con");
+        document.write("原始内容:" + mycon.innerHTML + "<br>");
+        mycon.innerHTML = "New text";
+        document.write("修改后内容:" + mycon.innerHTML + "<br>")
+
+    }
+
+    function changeStyle() {
+        var mycon = document.getElementById("con");
+        mycon.style.color = "red";
+    }
+
+    function showTxt() {
+        var mycon = document.getElementById("con");
+        mycon.style.display = "block";
+    }
+
+    function hideTxt() {
+        var mycon = document.getElementById("con");
+        mycon.style.display = "none";
+    }
+
+</script>
+
+<script src="js/testScript.js"></script>
+<form>
+    <input name="button1" type="button" onClick="testPrompt()" value="弹出对话框"/>
+    <input name="button2" type="button" onClick="testIf()" value="测试判断语句"/>
+    <input name="button3" type="button" onClick="openNewWindow()" value="弹出新窗口"/>
+    <input name="button4" type="button" onClick="closeWindow()" value="关闭弹出窗口"/>
+    <input name="button5" type="button" onClick="openConfirmWindow()" value="打开确认窗口"/>
+    <input name="button6" type="button" onClick="changeInnerHtml()" value="改变内部Html"/>
+    <input name="button7" type="button" onClick="changeStyle()" value="改变样式"/>
+    <input name="button8" type="button" onClick="hideTxt()" value="隐藏文本"/>
+    <input name="button9" type="button" onClick="showTxt()" value="显示文本"/>
+</form>
+</body>
+</html>
